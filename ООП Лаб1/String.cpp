@@ -159,14 +159,98 @@ int String::getCount()
 	return count;
 }
 
+bool String::operator==(const String &rhs)
+{
+	return ((strcmp(str,rhs.str)==0) && (len == rhs.len));
+}
+
+bool String::operator<(const String &rhs)
+{
+	return ((strcmp(str, rhs.str) < 0));
+}
+
+String & String::operator=(String & rhs)
+{
+	if (*this == rhs)
+		return *this;
+	delete[] str;
+	str = new char[rhs.len + 1];
+	strcpy(str, rhs.str);
+	len = rhs.len;
+	return *this;
+}
+
+String::operator const char*()
+{
+	return str;
+}
+
 String String::operator+(const String& rhs)
 {
-	String tmp;
-	tmp.len = len + rhs.len;
-	tmp.str = new char[tmp.len + 1];
-	strcpy(tmp.str, str);
-	strcat(tmp.str, rhs.str);
-
+	String tmp = concat(rhs);
+	
 	return tmp;
 }
 
+String& String::operator++()
+{
+	*this = this -> to_apper();
+
+	return *this;
+}
+
+String String::operator++(int)
+{
+	String tmp(*this);
+	*this = this->to_apper();
+	return tmp;
+}
+
+String& String::operator --()
+{
+	*this = this->to_lower();
+
+	return *this;
+}
+
+String String::operator --(int)
+{
+	String tmp(*this);
+	*this = this->to_lower();
+	return tmp;
+}
+
+std::ostream & operator << (std::ostream & out, String & obj)
+{
+	out << obj.str;
+	return out;
+}
+
+std::istream & operator >> (std::istream & in, String & obj)
+{
+	char buf[256];
+	in.getline(buf,256);
+	obj.len = strlen(buf);
+	obj.str = new char[obj.len + 1];
+	strcpy(obj.str, buf);
+
+	return in;
+}
+
+std::ofstream & operator << (std::ofstream & ofs, String & obj)
+{
+	ofs << obj.str;
+
+	return ofs;
+}
+
+std::ifstream & operator >> (std::ifstream & ifs, String & obj)
+{
+	char buf[256];
+	ifs.getline(buf,256);
+	obj.len = strlen(buf);
+	obj.str = new char[obj.len + 1];
+	strcpy(obj.str, buf);
+
+	return ifs;
+}

@@ -3,28 +3,45 @@ using namespace std;
 
 void main()
 {
-	system("color F0");
-	String a("abc");
-	a.show();
-	cout << "Count = " << String::getCount() << endl;
-	a.setString("AbC deF");
-	cout << "String after change" << endl;
-	a.show();
-	int index = a.search("de");
-	cout << "First occurrrence index \"de\"= " << index << endl;
-	int length = a.length();
-	cout << "Length string = " << length << endl;
-	String b = a.concat("ghk");
-	cout << "String before concatenation: " << endl << a.c_str() << endl;
-	cout << "String after concatenation with \"ghk\": " << endl << b.c_str() << endl;
-	cout << "Get symbol #2:" << a.getSymbol(2) << endl;
-	String c = a.to_apper();
-	String d = a.to_lower();
-	cout << "String a: " << endl << a.c_str() << endl;
-	cout << "String after to_apper: " << endl << c.c_str() << endl;
-	cout << "String after to_lower: " << endl << d.c_str() << endl;
-	String e = a.replace("bC", "NNN");
-	cout << "String after replace \"bC\" to \"NNN\": " << endl << e.c_str() << endl;
+	String a, b, c, d, e, f, g;
+	ifstream ifs("text.txt");
+	ifs >> a;
+	ifs >> b;
+	ifs.close();
+	cout << "Strings from the file" << endl;
+	cout << "a: " << a << endl << "b: " << b << endl;
+	if (a < b)
+		cout << "a<b" << endl;
+	else
+		cout << "a>=b" << endl;
+	c = a + b;
+	cout << "c = a + b = " << c << endl;
+	d = (a++) + (b--);
+	cout << "d = (a++) + (b--)=  " << d << " a: " << a << " b: " << b << endl;
+	e = (--a) + (++b);
+	cout << "e = (--a) + (++b)= " << e << " a: " << a << " b: " << b << endl;
+	if (a < b)
+		cout << "a<b" << endl;
+	else
+		cout << "a>=b" << endl;
+
+	cout << "f: ";
+	cin >> f;
+	cout << "g: ";
+	cin >> g;
+
+	if (f == g)
+		cout << "f == g" << endl;
+	else
+		cout << "f != g" << endl;
+	const char *r = (const char*)g;
+
+	cout << "Operation const char/*:" << endl << "const char *r = (const char*)g = " << r << endl;
+
+	ofstream ofs("text.txt");
+	ofs << a << endl << b << endl << c << endl << d << endl << e << endl << f << endl << g << endl << r << endl;
+	ofs.close();
+
 
 	system("pause");
 }
