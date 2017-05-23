@@ -19,11 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DateString.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="OctalString.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DateString.cpp" />
+    <ClCompile Include="OctalString.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="String.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AB4C654A-C226-41D2-B37F-66113FAA87C5}</ProjectGuid>

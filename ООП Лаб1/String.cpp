@@ -48,7 +48,7 @@ String& String::setString(char *s)
 
 void String::show()
 {
-	std::cout << str << std::endl;
+	std::cout << "String:" << str << std::endl;
 }
 
 int String::search(String substr)
@@ -254,3 +254,7 @@ std::ifstream & operator >> (std::ifstream & ifs, String & obj)
 
 	return ifs;
 }
+
+
+
+

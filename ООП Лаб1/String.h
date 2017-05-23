@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 
+
 class String
 {
 	char* str;
@@ -51,3 +52,4 @@ public:
 	friend std::ofstream& operator << (std::ofstream& ofs, String& obj);
 	friend std::ifstream& operator >> (std::ifstream& ifs, String& obj);
 };
+
