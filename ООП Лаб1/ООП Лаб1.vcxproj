@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DateString.h" />
-    <ClInclude Include="Exception.h" />
+    <ClInclude Include="Exceptions.h" />
     <ClInclude Include="OctalString.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>

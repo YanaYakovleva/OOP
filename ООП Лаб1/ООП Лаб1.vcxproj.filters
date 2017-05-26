@@ -21,10 +21,10 @@
     <ClInclude Include="DateString.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Exception.h">
+    <ClInclude Include="OctalString.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="OctalString.h">
+    <ClInclude Include="Exceptions.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

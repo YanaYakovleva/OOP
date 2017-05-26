@@ -1,6 +1,6 @@
 #pragma once
 #include "String.h"
-#include "Exception.h"
+#include "Exceptions.h"
 
 class OctalString :public String
 {

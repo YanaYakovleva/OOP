@@ -19,7 +19,7 @@ public:
 	~String();
 
 	String& setString(char* str);//изменение строки
-	void show();//вывод строки на экран
+	virtual void show();//вывод строки на экран
 	int search(String);//поиск подстроки в строке
 	String replace(String, String);//замена подстроки на подстроку
 	int length();//получение длины
