@@ -1,16 +1,17 @@
 #pragma once
 #include <iostream>
 using namespace std;
+
+template <class T> 
 class List
 {
 	class Elem
 	{
 	public:
-		int val;
+		T val;
 		Elem *next;
 		Elem();
-		Elem(int);
-		Elem(const Elem&);
+		Elem(T);
 		~Elem();
 	};
 	Elem *head;
@@ -18,29 +19,33 @@ class List
 public:
 	List();
 	~List();
-	void add(int);//добавление в конец списка
-	bool remove(int);//удаление по ключу
-	List::Elem* find(int);//поиск узла по ключу
+	void add(T element);//добавление в конец списка
+	bool remove(T key);//удаление по ключу
+	Elem* find(T val);//поиск узла по ключу
 	void show();//показать список в прямом направлении
 };
 
-List::List()
+template <class T>
+List<T>::List()
 {
 	head = NULL;
 	end = NULL;
 }
 
-List::~List()
+template <class T> 
+List<T>::~List()
 {
-	Elem* temp = head;
+	Elem* temp;
 	while (head != NULL)
 	{
+		temp = head;
 		head = head->next;
 		delete temp;
 	}
 }
 
-void List::add(int element)
+template <class T> 
+void List<T>::add(T element)
 {
 	Elem* pv = new Elem(element);
 	if (head == 0)
@@ -52,7 +57,8 @@ void List::add(int element)
 	}
 }
 
-bool List::remove(int key)
+template <class T>
+bool List<T>::remove(T key)
 {
 	if (Elem *k = find(key))
 	{
@@ -75,7 +81,8 @@ bool List::remove(int key)
 	return false;
 }
 
-List::Elem* List::find(int val)
+template <class T>
+typename List<T>::Elem* List<T>::find(T val)
 {
 	Elem *pv = head;
 	while (pv!=NULL)
@@ -87,7 +94,8 @@ List::Elem* List::find(int val)
 	return pv;
 }
 
-void List::show()
+template <class T>
+void List<T>::show()
 {
 	Elem *pv = head;
 	cout << "list:" << endl;
@@ -99,23 +107,22 @@ void List::show()
 	cout << endl;
 }
 
-List::Elem::Elem()
+template <class T>
+List<T>::Elem::Elem()
 {
 	val = NULL;
 	next = NULL;
 }
 
-List::Elem::Elem(int element)
+template <class T>
+List<T>::Elem::Elem(T element)
 {
 	val = element;
 	next = NULL;
 }
 
-List::Elem::Elem(const Elem &)
-{
-}
-
-List::Elem::~Elem()
+template <class T>
+List<T>::Elem::~Elem()
 {
 }
 

@@ -21,10 +21,9 @@
   <ItemGroup>
     <ClInclude Include="DateString.h" />
     <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="OctalString.h" />
     <ClInclude Include="String.h" />
-    <ClInclude Include="Template.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DateString.cpp" />

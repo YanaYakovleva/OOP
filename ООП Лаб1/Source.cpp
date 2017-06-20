@@ -1,40 +1,30 @@
 #include "String.h"
 #include "DateString.h"
 #include "OctalString.h"
-#include "Template.h"
-#include "Header.h"
+#include "List.h"
 using namespace std;
 
 void main()
 {
-	List a;
-	a.add(1);
-	a.add(2);
-	a.add(3);
-	a.add(4);
-	a.show();
-	a.remove(3);
-	a.show();
-	a.remove(1);
-	a.show();
-	a.remove(4);
-	a.show();
-
-
-
-	/*List <int> my_List;
+	List <int> my_List;
 	my_List.add(12);
 	my_List.add(13);
 	my_List.add(03);
+	cout << "Add 12, 13, 3" << endl;
 	my_List.show();
-	my_List.remove(0);
+	my_List.remove(13);
+	cout << "Delete 13" << endl;
 	my_List.show();
-
+	cout << "                                 " << endl;
 	List <String> my_List2;
-	my_List2.add("das");
-	my_List2.add("fgfd");
-	my_List2.add("dfdsf");
-	my_List2.show();*/
+	my_List2.add("abc");
+	my_List2.add("cde");
+	my_List2.add("fgh");
+	cout << "Add abc, cde, fgh" << endl;
+	my_List2.show();
+	my_List2.remove("abc");
+	cout << "Delete abc" << endl;
+	my_List2.show();
 
 	system("pause");
 }

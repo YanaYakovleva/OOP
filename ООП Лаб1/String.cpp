@@ -32,7 +32,9 @@ String::String(const String &string)
 
 String::~String()
 {
-	delete[] str;
+	if(str!=NULL)
+		delete[] str;
+	str = NULL;
 	count--;
 	//std::cerr << "Destr" << std::endl;
 }
